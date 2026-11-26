@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+button {
+  display: block;
+  margin-bottom: 1.4rem;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  transition: translate 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+
+.press-button {
+  background-color: #ffafcc;
+  box-shadow: 0 5px 0 #f48fb1;
+}
+.press-button:hover {
+  translate: 0 3px; 
+  box-shadow: 0 2px 0 #f48fb1;
+}
+
+.like-button-js {
+  background-color: #ff9aa2;
+  box-shadow: 0 5px 0 #e57373;
+}
+.like-button-js:hover {
+  translate: 0 2px;
+  box-shadow: 0 3px 0 #e57373;
+}
+
+.like-button-js.liked {
+  translate: 0 4px;
+  background-color: #ff758f;
+  box-shadow: 0 1px 0 #c9184a;
+}
+
+
+.fav-button-js {
+  color: #7f5539; 
+  background-color: #fde4cf;
+  box-shadow: 0 5px 0 #f3c69f;
+}
+.fav-button-js:hover {
+  translate: 0 2px;
+  box-shadow: 0 3px 0 #f3c69f;
+}
+
+.fav-button-js.active {
+  translate: 0 4px;
+  background-color: #ffcfd2;
+  box-shadow: 0 1px 0 #e5989b;
+}
+
+.follow-button-js {
+  background-color: #80ed99;
+  box-shadow: 0 5px 0 #57cc99;
+}
+.follow-button-js:hover {
+  translate: 0 2px;
+  box-shadow: 0 3px 0 #57cc99;
+}
+
+.follow-button-js.active {
+  translate: 0 4px;
+  background-color: #cdb4db;
+  box-shadow: 0 1px 0 #9d8189;
+}

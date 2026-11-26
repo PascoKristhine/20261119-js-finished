@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+body {
+  background-color: #faf9f6; 
+  font-family: "Helvetica Neue", Arial, "Hiragino Mincho ProN", serif;
+}
+
+div {
+  margin: 2rem;
+}
+
+
+.btn-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.btn-inner {
+  margin: 2px; 
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border-radius: 28px;
+  border: 0;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em; 
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.btn-inner:hover {
+  background-color: rgba(255, 255, 255, 0.85); 
+}
+
+.btn-container::before {
+  content: "";
+  height: 450px;
+  width: 450px;
+  position: absolute;
+  animation: rotate-line 6s linear infinite; 
+}
+
+
+.btn-container.gold::before {
+  background: linear-gradient(90deg, #f3e5ab, #d4af37, #fff8dc, #c5a059);
+}
+
+
+.btn-container.aurora::before {
+  background: linear-gradient(90deg, #e0c3fc, #8ec5fc, #fbc2eb, #a6c1ee);
+}
+
+@keyframes rotate-line {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.btn-container-adv {
+  position: relative;
+  max-width: 300px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.btn-inner-adv {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.06); 
+  background-color: #ffffff;
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-inner-adv:hover {
+  background-color: #fcfbfa;
+}
+
+.btn-svg-adv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-rect-adv {
+  fill: none;
+  stroke-width: 2.5px; 
+  stroke-linecap: round;
+  stroke-dasharray: 400%;
+  stroke-dashoffset: 400%;
+}
+
+
+.emerald .btn-rect-adv {
+  stroke: #68b0ab;
+}
+
+
+.rose .btn-rect-adv {
+  stroke: #d49a89;
+}
+
+
+.btn-rect-adv.active {
+  animation: line 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+
+.hover-silk .btn-rect-adv {
+  stroke: #7a8b99;
+  transition: stroke-dashoffset 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.hover-silk:hover .btn-rect-adv {
+  stroke-dashoffset: 0;
+}
+
+@keyframes line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

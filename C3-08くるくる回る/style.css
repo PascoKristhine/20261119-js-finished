@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/* 共通のベーススタイル */
+button {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Quicksand", sans-serif; /* 丸ゴシック系で優しい印象に */
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+/* 1. くるっと回転（いちごミルク × ミントのマカロン風） */
+.btn-rotate {
+  position: relative;
+  width: 170px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 999px; /* コロンとした丸み */
+  background: transparent;
+  transition: rotate 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); /* 少し弾むような可愛い動き */
+  transform-style: preserve-3d;
+}
+
+.btn-rotate-front,
+.btn-rotate-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 999px;
+  box-sizing: border-box;
+  border: 2px dashed rgba(255, 255, 255, 0.85); /* ステッチ風の可愛い枠線 */
+}
+
+/* 表面：ベビーピンク */
+.btn-rotate-front {
+  color: #fff;
+  background-color: #ff9ebb;
+  box-shadow: 0 5px 0 #f2799e, 0 8px 15px rgba(255, 158, 187, 0.4);
+}
+
+/* 裏面：パステルミント */
+.btn-rotate-back {
+  color: #fff;
+  background-color: #8ce0d0;
+  box-shadow: 0 5px 0 #68c4b3, 0 8px 15px rgba(140, 224, 208, 0.4);
+  rotate: x 180deg;
+}
+
+.btn-rotate:hover {
+  rotate: x 180deg;
+}
+
+/* 2. 回転し続ける（ふわっと重なるパステル雲・お花風） */
+.btn-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-top: 1rem;
+}
+
+.btn-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #7a5c61; /* 真っ黒ではなく優しいココアブラウンの文字 */
+  background: transparent;
+  border: 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ホバー時に少しぷくっと膨らむ */
+.btn-circle:hover {
+  transform: scale(1.05);
+}
+
+.btn-circle::before,
+.btn-circle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border: 3px solid rgba(255, 255, 255, 0.75); /* 砂糖菓子のような白い縁取り */
+  box-sizing: border-box;
+}
+
+/* 1枚目の花びら：パステルピンク */
+.btn-circle::before {
+  background: rgba(255, 183, 206, 0.75);
+  border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
+  animation: border-animation 7s infinite linear;
+  box-shadow: 0 8px 20px rgba(255, 183, 206, 0.35);
+}
+
+/* 2枚目の花びら：パステルラベンダー×イエローのグラデーション */
+.btn-circle::after {
+  background: linear-gradient(135deg, rgba(255, 230, 153, 0.75), rgba(214, 194, 255, 0.75));
+  border-radius: 45% 55% 42% 58% / 55% 45% 55% 45%;
+  animation: border-animation 5s infinite linear reverse; /* 逆回転させてふわふわ感を強調 */
+  box-shadow: 0 8px 20px rgba(214, 194, 255, 0.3);
+}
+
+@keyframes border-animation {
+  to { rotate: 360deg; }
+}
+
+/* クリック時の高速回転 */
+.btn-circle.fast-spin::before,
+.btn-circle.fast-spin::after {
+  animation-duration: 0.45s;
+}

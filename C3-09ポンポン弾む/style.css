@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+button {
+  display: block;
+  margin: 2.5rem;
+  padding: 1.1rem 2.4rem;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif; 
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  border-radius: 3px; 
+  cursor: pointer;
+}
+
+
+.btn-bounce {
+  color: #4a3f35;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f3eb 100%);
+  border: 1px solid #c5a467;
+  box-shadow: 0 4px 15px rgba(197, 164, 103, 0.15);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.btn-bounce:hover {
+  border-color: #a88444;
+  box-shadow: 0 10px 25px rgba(197, 164, 103, 0.28);
+  animation: elegant-float 1.8s infinite ease-in-out;
+}
+
+@keyframes elegant-float {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+/* 2. クリックで宝石のように色が変わるボタン */
+.btn-click-bounce {
+  color: #f8f5f0;
+  background-color: #1c2536; 
+  border: 1px solid rgba(226, 200, 146, 0.45);
+  box-shadow: 0 6px 20px rgba(28, 37, 54, 0.25);
+
+  transition: 
+    translate 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.6s ease,
+    box-shadow 0.45s ease;
+}
+
+.btn-click-bounce:hover {
+  box-shadow: 0 8px 25px rgba(28, 37, 54, 0.35);
+}

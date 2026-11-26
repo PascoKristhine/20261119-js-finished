@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+button {
+  display: block;
+  margin: 4rem;
+  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Quicksand", sans-serif; 
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.btn-ripple {
+  position: relative;
+  padding: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #ffb3cc 0%, #ff8fb3 100%);
+  box-shadow: 0 6px 18px rgba(255, 143, 179, 0.4);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+.btn-ripple:hover {
+  transform: scale(1.08);
+}
+
+.btn-ripple::before,
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: cute-ripple-animation 2.4s ease-out infinite;
+}
+
+
+.btn-ripple::before {
+  border: 2px solid #ffb3cc;
+  background: rgba(255, 179, 204, 0.15);
+}
+
+
+.btn-ripple::after {
+  border: 2px dashed #d6c2ff; 
+  animation-delay: 0.8s;
+}
+
+@keyframes cute-ripple-animation {
+  0% {
+    scale: 1;
+    opacity: 0.9;
+  }
+  100% {
+    scale: 1.65;
+    opacity: 0;
+  }
+}
+
+
+.btn-click-ripple {
+  position: relative;
+  padding: 1.1rem 2rem;
+  border: 2px dashed rgba(255, 255, 255, 0.85); 
+  font-size: 0.95rem;
+  border-radius: 999px; 
+  color: #fff;
+  background: linear-gradient(135deg, #98e6d6 0%, #7ad4c2 100%);
+  box-shadow: 0 5px 0 #5fb8a6, 0 8px 16px rgba(122, 212, 194, 0.35);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.btn-click-ripple:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #5fb8a6, 0 4px 10px rgba(122, 212, 194, 0.35);
+}
+
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  scale: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 20%, rgba(255, 240, 245, 0.5) 70%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  animation: cute-click-ripple 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cute-click-ripple {
+  to {
+    scale: 3.5;
+    opacity: 0;
+  }
+}

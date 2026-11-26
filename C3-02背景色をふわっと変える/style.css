@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+button {
+  display: block;
+  margin-bottom: 1.2rem;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.fade-button {
+  background-color: #7bdff2;
+}
+.fade-button:hover {
+  background-color: #b2f7ef;
+  color: #5a7d7c;
+}
+
+
+#fade-button-js {
+  background-color: #cdb4db;
+}
+
+.fade-button-pink {
+  background-color: #ffafcc;
+}
+.fade-button-pink:hover {
+  background-color: #ffc8dd;
+}
+
+#fade-button-random {
+  background-color: #ffcad4;
+}
